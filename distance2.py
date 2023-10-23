@@ -93,7 +93,7 @@ def qr_detect(image):
     return 0
 
 # reading reference image from directory
-ref_image = cv2.imread("C:/Users/plani/OneDrive/Desktop/Gita Testing Code/Gita-Testing/Distance_measurement_using_single_camera/frame-qr.png")
+ref_image = cv2.imread("frame-qr.png")
 
 ref_image_face_width = qr_detect(ref_image)
 
