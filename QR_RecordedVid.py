@@ -11,6 +11,8 @@ KNOWN_DISTANCE = 165.1  # centimeter (23 inches)
 # width of QR code in the real world or Object Plane
 KNOWN_WIDTH = 13.9  # centimeter, keepting old
 
+cap = cv2.VideoCapture("IMG_3214.MOV") #object used to get video frames, either live from webcam or from video file
+
 
 # Setup storage directories 
 video_Dir_name = "videoOutput"
@@ -37,9 +39,6 @@ RED = (0, 0, 255)
 WHITE = (255, 255, 255)
 TEXT_FONT = cv2.FONT_HERSHEY_COMPLEX
 
-#object used to get video frames, either live from webcam or from 
-# video file 
-cap = cv2.VideoCapture("IMG_3214.MOV")
 
 # how many frames in video 
 vid_length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
