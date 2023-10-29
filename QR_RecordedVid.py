@@ -7,11 +7,11 @@ from datetime import datetime
 
 """MUST UPDATE KNOWN_DISTANCE"""
 # distance from camera to QR code: Take Refrence Video at this measured distance 
-KNOWN_DISTANCE = 165.1  # centimeter (23 inches)
+KNOWN_DISTANCE = 66.04  # centimeter (23 inches)
 # width of QR code in the real world or Object Plane
 KNOWN_WIDTH = 13.9  # centimeter, keepting old
 
-cap = cv2.VideoCapture("IMG_3214.MOV") #object used to get video frames, either live from webcam or from video file
+cap = cv2.VideoCapture("troubled-video-2_NOSOUND.MP4") #object used to get video frames, either live from webcam or from video file
 
 
 # Setup storage directories 
@@ -126,7 +126,7 @@ focal_length_found = focal_length(KNOWN_DISTANCE, KNOWN_WIDTH, ref_image_face_wi
 print("focal length found is: ", focal_length_found)
 #cv2.imshow("ref_image", ref_image)
 
-out = cv2.VideoWriter( "videoOutput/" + timeStr + ".avi",cv2.VideoWriter_fourcc('M','J','P','G'), 30, (frame_width,frame_height))
+out = cv2.VideoWriter( "videoOutput/" + timeStr + ".avi",cv2.VideoWriter_fourcc('M','J','P','G'), 60, (frame_width,frame_height))
 
 frameCnt = 1
 
@@ -136,27 +136,32 @@ while(cap.isOpened):
     if not ret: # ret is false means last frame 
         break
 
-    print("progress: ", frameCnt, "/", vid_length)
+    try:
+        qr_width_in_frame = qr_detect(frame)
 
-    qr_width_in_frame = qr_detect(frame)
+        if qr_width_in_frame != 0 and qr_width_in_frame > 0:
 
-    # finding the distance by calling function Distance
-    if qr_width_in_frame != 0 and qr_width_in_frame > 0:
+            Distance = distance_finder(focal_length_found, KNOWN_WIDTH, qr_width_in_frame)
+            
+            distanceArray.append(round(Distance,3))
+            # Drawing Text on the screen
+            cv2.putText(
+                frame, f"Distance = {round(Distance,2)} CM", (100, 100), TEXT_FONT, 4, (RED), 5
+            )
+        else:
+            distanceArray.append(0)
 
-        Distance = distance_finder(focal_length_found, KNOWN_WIDTH, qr_width_in_frame)
-        
-        distanceArray.append(round(Distance,3))
-        # Drawing Text on the screen
-        cv2.putText(
-            frame, f"Distance = {round(Distance,2)} CM", (100, 100), TEXT_FONT, 4, (RED), 5
-        )
-    else:
-        distanceArray.append(0)
+        print("progress: ", frameCnt, "/", vid_length)
 
+    except:
+         print(" unable to call detect() for frame number ", str(frameCnt) )
     
-    #cv2.imshow("frame", frame)
 
-    out.write(frame)
+    #cv2.imshow("frame", frame)
+    try:
+        out.write(frame)
+    except:
+         print("unable to write frame number ", str(frameCnt))
 
     frameCnt+=1
 

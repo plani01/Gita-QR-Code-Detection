@@ -2,17 +2,17 @@ import cv2
 import os
 
 # Object to read video file
-cap = cv2.VideoCapture("IMG_3214.MOV")
+cap = cv2.VideoCapture("probGoodRef.MP4")
 
 # Object to do QR Code detection
 qrDecoder = cv2.QRCodeDetector()
 
-"""Un-Comment Below to get info about video resolution"""
-# frame_width = int(cap.get(3))
-# frame_height = int(cap.get(4))
+"""Getting info about video resolution"""
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
 
-# print("frame width: ", frame_width, "\n")
-# print("frame height: ", frame_height, "\n")
+print("frame width: ", frame_width, "\n")
+print("frame height: ", frame_height, "\n")
 
 fileNumber = 0
 
