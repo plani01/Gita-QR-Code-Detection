@@ -7,11 +7,11 @@ from datetime import datetime
 
 """MUST UPDATE KNOWN_DISTANCE"""
 # distance from camera to QR code: Take Refrence Video at this measured distance 
-KNOWN_DISTANCE = 66.04  # centimeter (23 inches)
+KNOWN_DISTANCE = 106.68  # centimeter (23 inches)
 # width of QR code in the real world or Object Plane
 KNOWN_WIDTH = 13.9  # centimeter, keepting old
 
-cap = cv2.VideoCapture("troubled-video-2_NOSOUND.MP4") #object used to get video frames, either live from webcam or from video file
+cap = cv2.VideoCapture("walking_back_no_sound.MP4") #object used to get video frames, either live from webcam or from video file
 
 
 # Setup storage directories 

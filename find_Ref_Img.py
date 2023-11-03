@@ -2,7 +2,7 @@ import cv2
 import os
 
 # Object to read video file
-cap = cv2.VideoCapture("probGoodRef.MP4")
+cap = cv2.VideoCapture("test_video.mp4")
 
 # Object to do QR Code detection
 qrDecoder = cv2.QRCodeDetector()
