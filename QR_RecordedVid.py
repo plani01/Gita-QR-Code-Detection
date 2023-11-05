@@ -13,7 +13,6 @@ KNOWN_WIDTH = 13.9  # centimeter, keepting old
 
 cap = cv2.VideoCapture("walking_back_no_sound.MP4") #object used to get video frames, either live from webcam or from video file
 
-
 # Setup storage directories 
 video_Dir_name = "videoOutput"
 IsDirExist = os.path.exists(video_Dir_name)
@@ -174,11 +173,11 @@ np.savetxt("csvFiles/"+timeStr + ".csv", distanceArray, delimiter=', ', fmt='%1.
 cap.release()
 cv2.destroyAllWindows()
 
-x_axis = np.arange(0,len(distanceArray),1) 
+x_axis = np.arange(0,len(distanceArray)/fps,1/fps) 
 
 plt.plot(x_axis,distanceArray)
 plt.title('Distance Plot')
-plt.xlabel('Valid Samples')
+plt.xlabel('Seconds')
 plt.ylabel('Distance From Camera(cm)')
 plt.show()
 
