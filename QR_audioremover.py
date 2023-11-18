@@ -3,7 +3,7 @@ from moviepy.editor import VideoFileClip
 #description: removes sound from target video to prevent errors
 #source: https://thepythoncode.com/assistant/transformation-details/python-script-to-remove-audio-from-video/
 ###########ENTER VIDEO NAME HERE###########
-videoname = "walking_back.mp4"
+videoname = "GH013693.mp4"
 silentdirectory = "silentvideooutput"
 threadnum = 8
 #def remove_audio_from_video(videoname):

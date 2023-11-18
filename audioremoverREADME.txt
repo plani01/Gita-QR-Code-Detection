@@ -13,6 +13,10 @@ you have a multicore cpu.
 hit "apply"
 7. you will need to reboot your computer for this change to take effect
 
+you will need "moviepy", open a command prompt window and type in:
+"pip install moviepy"
+after its installed, proceed below:
+
 How to use the audio remover:
 1. open the python file in your IDE of choice.
 2. under "videoname" type in the video name you want to remove audio from make sure to include the video type
@@ -20,7 +24,6 @@ How to use the audio remover:
 type in the number of threads you want the script to use under "threadnum".
 4. if you want a seperate directory for the video to be exported to, uncomment the two
 lines specified in the source file
-5. run the python script as you normally would, a status screen should pop up.
-The text will be in red, this is normal.
-6. If an error pops up, check to make sure the video actually got exported,
-sometimes it will throw errors when the video comes out fine.
+5. save your changes and run the "runaudioremover.bat" file
+6. a command prompt window will open up along with a status bar, this may take some time depending
+on the length of your video and how many threads you specified.
