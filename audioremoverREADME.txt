@@ -1,3 +1,6 @@
+DISCLAIMER: REMOVING AUDIO IS ONLY NECESSARY FOR 4K QUALITY VIDEOS: removing audio prevents running out of memmory
+before the video is finished creating
+
 A couple preliminary points:
 this audio remover is resource intensive, its recommended you run this on a
 multicore system. As this script can take advantage of multiple threads.
