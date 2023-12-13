@@ -1,9 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
 plt.style.use('bmh')
-
-distanceData = np.loadtxt("C:/Users/plani/Documents/trash/10-20-2023, 15.04.52.csv",
-                 delimiter=",")
+testname = "carpetSlow1.csv"
+distanceData = np.loadtxt("csvfiles" + "/" + "filtered_files" + "/" + "filtered_" + testname,delimiter=",")
+#distanceData = np.loadtxt("csvfiles" + "/" + "alltests_csvFiles" + "/" + testname,delimiter=",")
 
 x_axis = np.arange(0,len(distanceData),1) 
 
