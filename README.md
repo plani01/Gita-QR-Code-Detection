@@ -1,5 +1,19 @@
 # Gita-QR-Code-Detection
 
+### About this repository:
+This code was used for an undergraduate research class. The final goal was to asses how older adults would respond to using a person-follower cargo carrying robot. Questions would be asked after these older adults used the robot. Conculsions would be made to see how these types of robots could be used for assitive technology applications.  
+After performing a literature review, we discoverd there is a lack of testing
+procedures to properly asses saftey between autonomous robots interacting with people. Therfore, a subgoal of this research was to 
+contribute to the testing protocol of a person-follower cargo carrier robot. The QR distance detection code will obtain the following and braking distance of the robot. 
+Various tests were conducted with two walking speeds, varying the weight in the robot, and varying the ground surface. Videos recoreded from a paticular trial can be placed
+into a folder. Analysis will then be run on videos in the folder; annotations (bounding boxes) will be drawn on the video, and the distances will be saved to a csv files to 
+be later plotted. An example is shown below.
+
+[![Watch the video](https://img.youtube.com/vi/<VIDEO_ID>/hqdefault.jpg)]([https://www.youtube.com/embed/<VIDEO_ID>](https://youtu.be/m0nJvtGD3NA))
+
+[<img src="https://img.youtube.com/vi/m0nJvtGD3NA/hqdefault.jpg" width="400" height="300"
+/>](https://www.youtube.com/embed/m0nJvtGD3NA)
+
 ### General Steps to Run Any of the Code: 
 1.) Clone the repo in the directory of your choosing. 
 
